@@ -13,7 +13,8 @@ import { LeakyBucketAlgorithm } from '../src/engine/algorithms/leaky-bucket';
 import type { RateLimitStorage } from '../src/types';
 
 const scope = 'user' as const;
-const delay = (ms = 0) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+const delay = (ms = 0) =>
+  new Promise<void>((resolve) => setTimeout(resolve, ms));
 
 /**
  * Test storage that delays sorted-set calls to simulate contention.

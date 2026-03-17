@@ -3,7 +3,10 @@
 // Logs aggregated retry info when commands are blocked.
 
 import { Logger } from 'commandkit';
-import type { RateLimitResult, RateLimitStoreValue } from '@commandkit/ratelimit';
+import type {
+  RateLimitResult,
+  RateLimitStoreValue,
+} from '@commandkit/ratelimit';
 import type { Interaction, Message } from 'discord.js';
 
 type RateLimitedEventPayload = {

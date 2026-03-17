@@ -2,7 +2,11 @@
 //
 // Shows queue delay by comparing interaction creation vs handling time.
 
-import type { ChatInputCommand, CommandData, CommandMetadata } from 'commandkit';
+import type {
+  ChatInputCommand,
+  CommandData,
+  CommandMetadata,
+} from 'commandkit';
 
 export const command: CommandData = {
   name: 'ratelimit-queue',

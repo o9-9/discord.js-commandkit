@@ -32,12 +32,12 @@ export class ViolationTracker {
     return `violation:${key}`;
   }
 
-/**
- * Read stored violation state for a key, if present.
- *
- * @param key - Storage key for the limiter.
- * @returns Stored violation state or null when none is present.
- */
+  /**
+   * Read stored violation state for a key, if present.
+   *
+   * @param key - Storage key for the limiter.
+   * @returns Stored violation state or null when none is present.
+   */
   async getState(key: string): Promise<ViolationState | null> {
     const stored = await this.storage.get<ViolationState>(this.key(key));
     return isViolationState(stored) ? stored : null;

@@ -40,12 +40,12 @@ export class RateLimitEngine {
     this.violations = new ViolationTracker(storage);
   }
 
-/**
- * Create an algorithm instance for a resolved config.
- *
- * @param config - Resolved limiter configuration.
- * @returns Algorithm instance for the resolved config.
- */
+  /**
+   * Create an algorithm instance for a resolved config.
+   *
+   * @param config - Resolved limiter configuration.
+   * @returns Algorithm instance for the resolved config.
+   */
   private createAlgorithm(config: ResolvedLimiterConfig): RateLimitAlgorithm {
     switch (config.algorithm) {
       case 'fixed-window':

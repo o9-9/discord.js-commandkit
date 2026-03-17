@@ -2,7 +2,11 @@
 //
 // Reports remaining/reset values captured in the env store.
 
-import type { ChatInputCommand, CommandData, CommandMetadata } from 'commandkit';
+import type {
+  ChatInputCommand,
+  CommandData,
+  CommandMetadata,
+} from 'commandkit';
 import { getRateLimitInfo } from '@commandkit/ratelimit';
 
 export const command: CommandData = {
@@ -28,9 +32,7 @@ export const chatInput: ChatInputCommand = async (ctx) => {
   }
 
   const now = Date.now();
-  const resetAt = info.resetAt
-    ? new Date(info.resetAt).toISOString()
-    : 'n/a';
+  const resetAt = info.resetAt ? new Date(info.resetAt).toISOString() : 'n/a';
   const resetInMs = info.resetAt ? Math.max(0, info.resetAt - now) : 0;
 
   const lines = [

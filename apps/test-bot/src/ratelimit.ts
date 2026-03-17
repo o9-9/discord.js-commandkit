@@ -41,7 +41,9 @@ configureRatelimit({
       Logger.info(`[ratelimit] allowed ${key} remaining=${result.remaining}`);
     },
     onRateLimited: ({ key, result }) => {
-      Logger.warn(`[ratelimit] limited ${key} retryAfter=${result.retryAfter}ms`);
+      Logger.warn(
+        `[ratelimit] limited ${key} retryAfter=${result.retryAfter}ms`,
+      );
     },
     onViolation: (key, count) => {
       Logger.warn(`[ratelimit] violation ${key} count=${count}`);

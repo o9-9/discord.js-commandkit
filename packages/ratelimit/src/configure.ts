@@ -95,9 +95,7 @@ export function getRateLimitConfig(): RateLimitPluginOptions {
  * @param config - Runtime options to merge into the active configuration.
  * @returns Nothing; updates runtime state in place.
  */
-export function configureRatelimit(
-  config: RateLimitPluginOptions = {},
-): void {
+export function configureRatelimit(config: RateLimitPluginOptions = {}): void {
   configured = true;
   Object.assign(rateLimitConfig, config);
   updateRuntime(config);
